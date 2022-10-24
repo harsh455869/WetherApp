@@ -249,7 +249,7 @@ day[da.getDay()]}  ${(da.getHours()<9)?'0'+da.getHours():da.getHours()}:${da.get
 
 
 
-y.push({place:req.body.place,time:da.time})
+y.push({place:req.body.place,time:time})
     let dat=await Patel.findByIdAndUpdate(decoded.id,{history:y})
     
 // console.log(y);
