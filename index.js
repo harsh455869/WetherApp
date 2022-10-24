@@ -245,7 +245,7 @@ let day=['SUN','MON','TUE','WED','THUR','FRI','SAT'];
     
 time=    `Date: ${da.getDate()} ${ye[da.getMonth()]} ${da.getFullYear()} | ${
 
-day[da.getDay()]}  ${(da.getHours()<9)?'0'+da.getHours():da.getHours()}:${da.getMinutes()<9?'0'+da.getMinutes():da.getMinutes()}`
+day[da.getDay()]}  ${(da.getHours())}:${da.getMinutes()}`
 
 
 
