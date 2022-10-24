@@ -71,6 +71,8 @@ const { runInNewContext } = require('vm');
 // const { default: isEmail } = require('validator/lib/isEmail');
 mongoose.connect('mongodb://localhost:27017/patel').then(()=>{
   console.log("con sucess");
+}).catch((err)=>{
+  console.log(err)
 })
 const hendleerror= (err)=>{
  
@@ -214,7 +216,7 @@ const token=req.cookies.jwt
   const decoded = jwt.verify(token, "patel harsh secret");
   const dat=await Patel.findById({_id:decoded.id});
   
-  res.render('User',{kalu:dat.history})
+  res.render('User',{kalu:dat.history,active:'true'})
 
 })
 
