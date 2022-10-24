@@ -238,10 +238,18 @@ y=datl.history;
 console.log(y)
 let ye=['JAN','FEB','MAR','APR','MAY','JUN','JLY','AUG','SPT','OCT','NOV','DEC'];
 let day=['SUN','MON','TUE','WED','THUR','FRI','SAT'];
-// let o=[1,2,3];
-let da=new Date()
-y.push({place:req.body.place,time:`Date: ${da.getDate()} ${ye[da.getMonth()]} ${da.getFullYear()} | ${
-day[da.getDay()]}  ${(da.getHours()<9)?'0'+da.getHours():da.getHours()}:${da.getMinutes()<9?'0'+da.getMinutes():da.getMinutes()}`})
+  let time;
+
+  let da=new Date();
+
+    
+time=    `Date: ${da.getDate()} ${ye[da.getMonth()]} ${da.getFullYear()} | ${
+
+day[da.getDay()]}  ${(da.getHours()<9)?'0'+da.getHours():da.getHours()}:${da.getMinutes()<9?'0'+da.getMinutes():da.getMinutes()}`
+
+
+
+y.push({place:req.body.place,time:da.time})
     let dat=await Patel.findByIdAndUpdate(decoded.id,{history:y})
     
 // console.log(y);
